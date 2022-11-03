@@ -2,8 +2,12 @@ from ting_file_management.queue import Queue
 
 
 def exists_word(word, instance):
-    """Aqui irá sua implementação"""
+    result = search_by_word(word, instance)
+    for item in result:
+        for match in item["ocorrencias"]:
+            match.pop("conteudo")
 
+    return result
 
 def search_by_word(word, instance: Queue):
     result = []
@@ -19,7 +23,7 @@ def search_by_word(word, instance: Queue):
                 ocurred = True
                 parcial["ocorrencias"].append(
                     {"linha": index + 1, "conteudo": line}
-                )
+                    )
 
         if ocurred:
             result.append(parcial)
