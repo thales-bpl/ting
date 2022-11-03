@@ -6,7 +6,7 @@ from ting_file_management.file_management import txt_importer
 def process(path_file: str, instance: Queue):
     for item in instance.list:
         if item["nome_do_arquivo"] == path_file:
-            print ('Esse arquivo já foi listado')
+            print('Esse arquivo já foi listado')
             return
 
     file_content_list = txt_importer(path_file)
