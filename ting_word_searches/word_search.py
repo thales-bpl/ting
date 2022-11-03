@@ -9,6 +9,7 @@ def exists_word(word, instance):
 
     return result
 
+
 def search_by_word(word, instance: Queue):
     result = []
     for item in instance.list:
